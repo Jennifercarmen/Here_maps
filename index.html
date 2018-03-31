@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plugin</title>
+  <link rel="shortcut icon" href="assets/images/favicon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <!-- Menu Fijo -->
+
+  <nav class="menu navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <img class="img-brand" src="assets/images/here_white.png" alt="Here maps">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">INICIO
+          </a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">LINK</a>
+        </li> -->
+      </ul>
+      <form class="form-inline mt-2 mt-md-0">       
+          <button class="btn btn-herem my-2 my-sm-0" type="submit"> <a href="views/login.html">Entrar</a></button>
+      </form>
+    </div>
+  </nav>
+  <!-- Portada -->
+  <main  class="container">
+      <div class="opacity">
+      <div class="jumbotron">
+            <div>
+        <h1>Encuentra los lugares que buscabas</h1>
+        <!-- <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed
+          to the top of your browser's viewport.</p> -->
+          </div>
+      </div>
+    </div>
+  </main>
+  <!-- Seccion mapa  -->
+  <section class="mapa">
+    <div class="container">
+      <div class="row">
+        <div class="col box_mapa text-center">
+          <img class="img-mapa img-responsive" src="assets/images/mapa.jpg" alt="Here maps">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <div class="search">
+            <input type="text" placeholder="¿A dónde quieres ir?">
+            <button type="submit" class="btn btn-here">Buscar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+
+      <div class="row row-top">
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="assets/images/rutamovil.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-heremap">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="assets/images/ciclismo.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-heremap">Go somewhere</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="assets/images/image2.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Inspiración de Viaje</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-heremap">Go somewhere</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+
+    <footer>
+
+      <div class="container">
+
+        <div class="row">
+          <div class="col-xs-12 col-md-12">
+            <p class="text-center">copyright 2018</p>
+          </div>
+
+        </div>
+      </div>
+
+      </div>
+    </footer>
+
+    <!-- Materialize  Jquery JavaScript -->
+    <script src="vendors/js/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+      crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

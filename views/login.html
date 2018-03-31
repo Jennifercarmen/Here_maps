@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plugin</title>
+  <link rel="shortcut icon" href="../assets/images/favicon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+  <!-- Menu Fijo -->
+
+  <nav class="menu navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a href="../index.html"><img class="img-brand" src="../assets/images/here_white.png" alt="Here maps"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">INICIO
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">LINK</a>
+        </li>
+      </ul>
+      <form class="form-inline mt-2 mt-md-0">
+        <button class="btn btn-herem my-2 my-sm-0" type="submit">
+          <a href="login.html">Entrar</a>
+        </button>
+      </form>
+    </div>
+  </nav>
+<!-- Sección Login -->
+  <main class="main container">
+    <div class="row">
+      <div class="col align-self-start">
+      </div>
+      <div class="col align-self-center login">
+        <div>
+          <h3 class="text-center title">Inicie sesión en Here</h3>
+          <div class="form-group">
+            <button id="inifacebook" class="btn text-white form-control">
+              <i class="fab fa-facebook-f"></i> Continuar con facebook
+            </button>
+          </div>
+          <div class="form-group">
+            <button id="inigoogle" class="btn text-white form-control ">
+              <i class="fab fa-google" aria-hidden="true"></i> Continuar con Google</button>
+          </div>
+          <div class="form-group o-line" >
+            <span class="text-verd"> ----------------------- </span> O  <span class="text-verd"> --------------------------- </span> 
+            </div>
+       
+          <div class="form-group">
+            <input type="text" id="email" size="20" class="form-control" value="" placeholder="E-mail" />
+          </div>
+          <div class="form-group">
+            <input id="password" name="password" type="password" class="form-control" placeholder="Contraseña" />
+          </div>
+          <a class="text-verd" href="">
+            ¿Ha olvidado su contraseña?</a>
+         <a href="main.html"> <button class="btn btn-here form-control disabled">Inicia sesión</button></a>
+        </div>
+      </div>
+      <div class="col align-self-end">
+      </div>
+    </div>
+  </main>
+  <footer>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <p class="text-center">copyright 2018</p>
+        </div>
+
+      </div>
+    </div>
+
+    </div>
+  </footer>
+
+  <!-- Materialize  Jquery JavaScript -->
+  <script src="../vendors/js/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+    crossorigin="anonymous"></script>
+  <script src="../js/app.js"></script>
+</body>
+
+</html>

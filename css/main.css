@@ -1,0 +1,184 @@
+
+body {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding-top: 4.5rem;
+}
+
+img.img-brand {
+    width: 70px;
+}
+.navbar{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+ul.navbar-nav.mr-auto {
+    margin-left: 40px;
+}
+
+.box_mapa {
+    background-color: #252c34;
+    margin: 40px;
+    height: 450px;
+}
+.box_mapa img{
+    height: 100%;
+    width: 100%;
+}
+footer{
+    padding: 30px;
+    background-color: #252c34;
+    color: #34c9ab;
+}
+.btn-here {
+    color: #fff;
+    background-color: #2dd5c8;
+    border-color: #2dd5c8;
+}
+.btn-herem {
+    color: #fff;
+    background-color: transparent;
+    border-color: white;
+    padding: 5px;
+}
+.search {
+    float: right;
+    padding-right: 35px;
+    padding-bottom: 30px;
+}
+
+@media (max-width: 767px) {
+    .box_mapa {
+        background-color: #252c34;
+        margin: 20px;
+    }
+}
+@media (min-width: 1200px){
+    .menu {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        color: white;
+    }
+    .navbar-dark .navbar-nav .active>.nav-link{
+        color: white;;
+    }
+    li.nav-item.active {
+        border-bottom: 4px solid #48dad0;
+    }
+    li.nav-item {
+        margin-right: 10px;
+    }
+    .navbar-dark .navbar-nav .nav-link:hover {
+        color:#189b89 ;
+    }
+}
+.access-links {
+    float: right;
+    margin: 15px 0;
+    text-align: right;
+    white-space: nowrap;
+}
+.jumbotron {
+    color: white;
+    background-image: url('../assets/images/portada.jpg');
+    background-size: cover;
+    background-position-y: 450px;
+    height: 300px;
+}
+.bg-dark {
+    background-color: #007370 !important;
+}
+a{
+    color: white;
+}
+a:hover {
+    color: #189b89;
+    text-decoration: none;
+}
+
+/* Login */
+main#page {
+    padding: 50px;
+}
+.title{
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+.description{
+    font-family: 'Lora', serif;
+
+}
+#inifacebook {
+    background-color: #2c3271;
+}
+#inigoogle {
+    background-color: #dd4b39;
+}
+.text-verd {
+    color: #1b9a85;
+    font-weight: 500;
+}
+
+.main {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.login{
+    border-radius: 5px;
+    box-shadow: 0 0 30px #eee;
+    border: 1px solid #e4e4e4;
+    background: #fff;
+    padding: 15px;
+}
+
+/* usuario */
+.img-size{
+    height: 400px;
+  }
+  
+  .bg-options-list{ 
+    background: #1E293B;
+  }
+  
+  .item-styles{
+    list-style: none;
+  }
+  
+  .item-styles:hover{
+    background: rgb(29, 36, 46);
+    cursor: pointer;
+  }
+  
+  .box-input-styles{ 
+    background: rgb(55, 70, 94);
+    border-radius: 5px;
+    /* box-shadow: 10px 10px 24px -6px rgba(0,0,0,0.75); */
+    box-shadow: 2px 10px 33px -6px rgba(0,0,0,0.75); 
+  }
+  
+  .input-styles{
+    background: transparent; 
+    border-radius: 5px;
+    border: none; 
+    background: rgb(55, 70, 94);
+  }
+  
+  .input-styles:focus{
+    outline: none;
+  }
+  
+  .icon-search-styles{
+    font-size: 1.2em;
+    padding: 6px 6px 2px 2px;
+  }
+  
+  .icon-color{
+    color: #48DAD0;
+  }
+  .img-mapa{
+      width: 300px;
+  }
