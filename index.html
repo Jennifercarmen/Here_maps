@@ -7,61 +7,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plugin</title>
   <link rel="shortcut icon" href="assets/images/favicon.png">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
   <!-- Menu Fijo -->
 
-  <nav class="menu navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <img class="img-brand" src="assets/images/here_white.png" alt="Here maps">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html">INICIO
-          </a>
-        </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">LINK</a>
-        </li> -->
-      </ul>
-      <form class="form-inline mt-2 mt-md-0">       
-          <button class="btn btn-herem my-2 my-sm-0" type="submit"> <a href="views/login.html">Entrar</a></button>
-      </form>
-    </div>
-  </nav>
+  <div class="container-fluid p-0 m-0">
+    <nav class="menu navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <img class="img-brand" src="assets/images/here_white.png" alt="Here maps">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link text-white" href="index.html">INICIO
+            </a>
+          </li>
+          
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">       
+            <a class=" btn btn-navbar  my-2 my-sm-0" role="button" aria-pressed="false" href="views/login.html">Entrar</a>
+        </form>
+      </div>
+    </nav>
+  </div>
+
   <!-- Portada -->
-  <main  class="container">
-      <div class="opacity">
-      <div class="jumbotron">
-            <div>
-        <h1>Encuentra los lugares que buscabas</h1>
-        <!-- <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed
-          to the top of your browser's viewport.</p> -->
+  <main  class="container-fluid p-0 m-0">
+     <div class="row m-0 p-0">
+       <div class="col p-0">
+        <div class="opacity m-0">
+          <div class="jumbotron p-0 d-flex align-items-center m-0">
+            <h1 class="text-center w-100 opacity m-0 ">Encuentra los lugares que buscabas</h1>
+           
           </div>
+        </div>
+       </div>
+     </div>
+  </main>
+
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 d-flex align-items-center justify-content-center p-3 bg-input">
+         <!--  <div class="search "> -->
+            <input class="search-input-styles " type="text" placeholder="¿A dónde quieres ir?">
+            <button type="submit" class="btn btn-here">Buscar</button>
+         <!--  </div> -->
+        </div>
       </div>
     </div>
-  </main>
+
   <!-- Seccion mapa  -->
-  <section class="mapa">
-    <div class="container">
-      <div class="row">
-        <div class="col box_mapa text-center">
-          <img class="img-mapa img-responsive" src="assets/images/mapa.jpg" alt="Here maps">
+  <section class=" m-0 p-0 w-100">
+    <div class="">
+      <div class="row m-0 p-0">
+        <div class="col-12 box_mapa text-center">
+          <img class="img-mapa img-fluid w-100" src="assets/images/mapa.jpg" alt="Here maps">
         </div>
       </div>
     </div>
   </section>
   <section>
-    <div class="container">
+
+    <!-- <div class="container">
       <div class="row">
         <div class="col-xs-12 col-md-12">
           <div class="search">
@@ -70,14 +84,14 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </section>
-  <section>
+  <section class="p-3">
     <div class="container">
-
-      <div class="row row-top">
+<br>
+      <div class="row ">
         <div class="col-xs-12 col-sm-4">
-          <div class="card" style="width: 18rem;">
+          <div class="card w-100">
             <img class="card-img-top" src="assets/images/rutamovil.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -85,9 +99,10 @@
               <a href="#" class="btn btn-heremap">Go somewhere</a>
             </div>
           </div>
+          <br>
         </div>
         <div class="col-xs-12 col-sm-4">
-          <div class="card" style="width: 18rem;">
+          <div class="card w-100">
             <img class="card-img-top" src="assets/images/ciclismo.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -95,10 +110,10 @@
               <a href="#" class="btn btn-heremap">Go somewhere</a>
             </div>
           </div>
-
+          <br>
         </div>
         <div class="col-xs-12 col-sm-4">
-          <div class="card" style="width: 18rem;">
+          <div class="card w-100">
             <img class="card-img-top" src="assets/images/image2.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Inspiración de Viaje</h5>
@@ -106,7 +121,7 @@
               <a href="#" class="btn btn-heremap">Go somewhere</a>
             </div>
           </div>
-
+          <br>
         </div>
       </div>
     </div>
@@ -128,7 +143,7 @@
       </div>
     </footer>
 
-    <!-- Materialize  Jquery JavaScript -->
+    <!-- Bootstrap  Jquery JavaScript -->
     <script src="vendors/js/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
       crossorigin="anonymous"></script>
