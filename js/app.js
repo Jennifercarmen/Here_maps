@@ -1,4 +1,6 @@
 const openModalActivities = () => {
+  const divActivities=$('#divActivities');
+  divActivities.empty();
   firebase.database().ref('actividades').on('child_added', function (snap) {
     name = snap.val().name;
     console.log(name);
@@ -12,7 +14,7 @@ const openModalActivities = () => {
     </div> 
     </div>
     `;
-    $('#divActivities').append(html);
+    divActivities.append(html);
   });
 
 }
