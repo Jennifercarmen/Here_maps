@@ -1,15 +1,20 @@
-  // Collapse Navbar
-  const navbarCollapse = function() {
-   if ($("#prie").offset().top > 100) {
-    //  $("#header-main").addClass("navfixed"); 
-     alert("hola");
-   } else {
-     $("#header-main").removeClass("navbar-shrink"); 
-   }
- };
- // Collapse now if page is not at top
- navbarCollapse();
- // Collapse the navbar when page is scrolled
- $(window).scroll(navbarCollapse);
- 
- 
+const openModalActivities = () => {
+  firebase.database().ref('actividades').on('child_added', function (snap) {
+    name = snap.val().name;
+    console.log(name);
+    const html = `
+    <div class="col-md-6">
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" >
+        ${name}
+      </label>
+    </div> 
+    </div>
+    `;
+    $('#divActivities').append(html);
+  });
+
+}
+$('#btn_saveRoute').click(openModalActivities);
+

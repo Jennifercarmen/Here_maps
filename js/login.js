@@ -12,7 +12,7 @@ $inigoogle.on('click', signInGoogle);
 function initApp() {
   registrationUsers(user.uid, user.displayName, user.email,user.photoURL);
   login(user.uid, user.displayName , user.email);
-  window.location.href = 'desktop.html';  
+  window.location.href = 'main.html';  
 }
 function registrationUsers(uid, name, email,photoURL) {
     firebase.database().ref('Usuarios/' + uid).set({
@@ -30,7 +30,7 @@ function login(uid, name, email) {
 function signOut() {
   firebase.auth().onAuthStateChanged(function(user) {
     database.ref('/connected/' + user.uid).remove();
-    window.location.href = 'main.html';  
+    window.location.href = '../index.html';  
   });
 };
 function signInFacebook() {
@@ -57,7 +57,7 @@ function signInGoogle() {
     user = result.user;
     console.log(user);
     initApp();
-    window.location.href = 'desktop.html';
+    window.location.href = 'main.html';
   });
 }
 var $logout = $('.logout');
