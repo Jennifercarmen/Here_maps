@@ -142,7 +142,7 @@ function openBubble(position, text){
 
 function addManueversToMap(route){
   var svgMarkup = '<svg width="18" height="18" ' +
-    'xmlns="http://www.w3.org/2000/svg">' +
+    'xmlns="https://www.w3.org/2000/svg">' +
     '<circle cx="8" cy="8" r="8" ' +
       'fill="#1b468d" stroke="white" stroke-width="1"  />' +
     '</svg>',

@@ -158,10 +158,6 @@ main#page {
     font-weight: 500;
 }
 
-.main {
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
 .login{
     border-radius: 5px;
     box-shadow: 0 0 30px #eee;
@@ -213,9 +209,6 @@ main#page {
   
   .icon-color{
     color: #48DAD0;
-  }
-  .img-mapa{
-      width: 300px;
   }
 
   /* MAP´S STYLES*/
@@ -376,3 +369,10 @@ main#page {
   .directions li span.ferry  {
     background-position:-1316px;
   }  
+
+/*PRINCIPAL SECTION */
+
+#principal-map{
+  background:gray;
+  height: 80vh;
+}
