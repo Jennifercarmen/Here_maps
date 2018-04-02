@@ -16,7 +16,5 @@ const openModalActivities = () => {
     `;
     divActivities.append(html);
   });
-
 }
 $('#btn_saveRoute').click(openModalActivities);
-
