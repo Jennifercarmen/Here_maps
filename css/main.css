@@ -375,6 +375,14 @@ main#page {
   height: 75vh;
 }
 
-.color-red {
-  
+/* PLACES */
+#places-container{
+  height: 330px;
+	border: 1px solid #ddd;
+	background:teal;
+	overflow-y: scroll;
+}
+
+.card-styles{
+  height: 400px;
 }

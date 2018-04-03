@@ -95,13 +95,14 @@ function begin () {
    center: {lat:-12.085474, lng:-76.977291},
    zoom: 12
  });
+  // Create the default UI components
+  var ui = H.ui.UI.createDefault(map, defaultLayers);
  
  //Step 3: make the map interactive
  
  var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
  
- // Create the default UI components
- var ui = H.ui.UI.createDefault(map, defaultLayers);
+
  
  // Hold a reference to any infobubble opened
  var bubble;
