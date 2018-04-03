@@ -96,7 +96,7 @@
     </div>
   </nav>
   <!-- Map Section -->
-  <main class="container-fluid m-0 p-0">
+ <!--  <main class="container-fluid m-0 p-0">
     <div class="row m-0 p-0 bg-dark">
         <div  class="text-white p-2  col-6 font-weight-light mr-0">
             <div class="box-input-styles  d-flex w-100"><i class="fas fa-bullseye icon-search-styles icon-color"></i><input class="input-styles text-white p-1 w-75 font-weight-light route-A-js" type="text" placeholder="¿A dónde vamos? ..."/></div>
@@ -116,7 +116,36 @@
       </div>
 
     </div>
-  </main>
+  </main> -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 d-flex align-items-center justify-content-center p-3 bg-input">
+          <input class="search-input-styles principal-input-js" type="text" placeholder="¿A dónde quieres ir?">
+          <button type="submit" class="btn btn-here search-button-js">Buscar</button> 
+          <br>
+          <button class="btn btn-info arrive-js ml-1">Instrucciones</button> 
+              
+      </div>
+    </div>
+    <div id="ubicacion">
+     
+    </div>
+  </div>
+</div>
+
+<!-- Seccion mapa  -->
+<section class=" m-0 p-0 w-100">
+  <div class="">
+    <div class="row m-0 box_mapa p-0">
+      <div class="col-12 w-100 p-0" id="map"></div>       
+    <!--   </div> -->
+    </div>
+    <div class="row m-0 p-3 box_mapa">
+      <div class="col-12 w-100" id="panel"></div>
+    </div>
+  </div>
+</section>
+<section>
   <!-- lugares-cercanos -->
   
   <div id="lugares-cercanos">
@@ -196,7 +225,7 @@
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
   <script src="../js/config_firebase.js"></script>
   <script src="../js/app.js"></script>
-  <script src="../js/main.js"></script>
+  <script src="../js/home.js"></script>
   <script src="../js/functionCompartir.js"></script>
 
 </body>
