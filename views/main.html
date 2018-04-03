@@ -2,77 +2,112 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plugin</title>
-    <link rel="shortcut icon" href="../assets/images/favicon.png">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="../css/main.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plugin</title>
+  <!-- HERE MAPS API -->
+  <link rel="stylesheet" type="text/css" href="https://js.cit.api.here.com/v3/3.0/mapsjs-ui.css" />
+  <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-core.js"></script>
+  <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-service.js"></script>
+  <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+  <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+  <!-- ICON -->
+  <link rel="shortcut icon" href="../assets/images/favicon.png">
+  <!-- BOOTSTRAP STYLES-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto" rel="stylesheet">
+  <!-- STYLES -->
+  <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
-    <!-- Menu Fijo -->
+  <!-- Menu Fijo -->
 
-    <nav class="menu navbar navbar-expand-md navbar-dark bg-dark">
-        <a href="../index.html">
-            <img class="img-brand" src="../assets/images/here_white.png" alt="Here maps">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active pr-3 text-center">
-                    <a class="nav-link" href="#">Inicio <i class="fas fa-home icon-color"></i> </a>
-                </li>
-                <li class="nav-item pr-3 text-center" data-toggle="modal" data-target="#modalActivities"  id="btn_saveRoute">
-                    <a class="nav-link" href="#">Grabar ruta <i class="fas fa-save icon-color"></i> </a>
-                </li>
-                <li class="nav-item pr-3 text-center">
-                    <a class="nav-link" href="#">Mis rutas <i class="fas fa-heart icon-color"></i> </a>
-                </li>
-                <li class="nav-item pr-3 text-center">
-                    <a class="nav-link" href="#">Compartir <i class="fas fa-share-alt icon-color"></i></a>
-                </li>
-            </ul>
-            <form class="form-inline mt-2 mt-md-0">
-                <button class="btn btn-herem my-2 my-sm-0" type="submit">
-                    <a href="../index.html">Cerrar Sesión</a>
-                </button>
-            </form>
-        </div>
-    </nav>
-    <!-- Map Section -->
-    <main class="container-fluid m-0 p-0">
-        <div class="row m-0">
-            <div class="col-12 p-0 ">                
-                <div id="principal-map"  class="w-100"></div>
-               <!--  <ul class="bg-options-list m-0 p-0">
-                   
-                        <li  class="text-white p-3 item-styles d-flex justify-content-center font-weight-light">
-                        <div class="box-input-styles w-50 d-flex justify-content-between"><input class="input-styles text-white p-1 w-75 font-weight-light" type="text" placeholder="Buscar rutas ..."/><i class="fas fa-search icon-search-styles icon-color"></i></div>
-                        </li>
-                        <li data-toggle="modal" data-target="#modalActivities"  id="btn_saveRoute"  class="text-white p-3 item-styles d-flex justify-content-center font-weight-light">
-                                Grabar ruta  <i class="fas fa-save icon-color"> </i>
-                           </li>
-                        <li class="text-white p-3 item-styles d-flex justify-content-center font-weight-light ">
-                          Iniciar ruta <i class="fas fa-map-signs icon-color"> </i>
-                        </li>
-                        <li  class="text-white p-3 item-styles d-flex justify-content-center font-weight-light">
-                          Mis rutas <i class="fas fa-heart  icon-color"></i>
-                        </li>
-                      </ul> -->
+  <nav class="menu navbar navbar-expand-md navbar-dark bg-dark">
+    <a href="../index.html">
+      <img class="img-brand" src="../assets/images/here_white.png" alt="Here maps">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active pr-3 text-center">
+          <a class="nav-link" href="#">Inicio
+            <i class="fas fa-home icon-color"></i>
+          </a>
+        </li>
+        <li class="nav-item pr-3 text-center" data-toggle="modal" data-target="#modalActivities" id="btn_saveRoute">
+          <a class="nav-link" href="#">Grabar ruta
+            <i class="fas fa-save text-success"></i>
+          </a>
+        </li>
+        <li class="nav-item pr-3 text-center">
+          <a class="nav-link" href="#">Mis rutas
+            <i class="fas fa-heart text-danger"></i>
+          </a>
+        </li>
+        <!-- <li class="nav-item pr-3 text-center">
+            <a class="nav-link" href="#">Lugares cercanos
+              <i class="fas fa-map-signs icon-color"></i>
+            </a>
+          </li> -->
+          <li class="nav-item dropdown pr-3 text-center">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Lugares cercanos <i class="fas fa-map-signs text-warning"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Restaurantes</a>
+              <a class="dropdown-item" href="#">Hoteles</a>
+              <a class="dropdown-item" href="#">Something else here</a>
             </div>
-            
+          </li>
+        <li class="nav-item pr-3 text-center">
+          <a class="nav-link" href="#">Compartir
+            <i class="fas fa-share-alt icon-color"></i>
+          </a>
+        </li>
+      </ul>
+      <form class="form-inline mt-2 mt-md-0">
+        <button class="btn btn-herem my-2 my-sm-0" type="submit">
+          <a href="../index.html">Cerrar Sesión</a>
+        </button>
+      </form>
+    </div>
+  </nav>
+  <!-- Map Section -->
+  <main class="container-fluid m-0 p-0">
+    <div class="row m-0 p-0 bg-dark">
+        <div  class="text-white p-2  col-6 font-weight-light mr-0">
+            <div class="box-input-styles  d-flex w-100"><i class="fas fa-bullseye icon-search-styles icon-color"></i><input class="input-styles text-white p-1 w-75 font-weight-light route-A-js" type="text" placeholder="¿A dónde vamos? ..."/></div>
+            <div class="box-input-styles d-flex w-100"><i class="fas fa-location-arrow  icon-search-styles icon-color"></i><input class="input-styles text-white p-1 w-75 font-weight-light route-B-js" type="text" placeholder="¿A dónde vamos? ..."/></div>
         </div>
-    </main>
-    <!-- Modal Actividades-->
-<div class="modal fade" id="modalActivities" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div  class="text-white p-2 col-6 font-weight-light m-0 d-flex justify-content-center align-items-center">
+            <button class="btn btn-info display-route-js">Trazar ruta</button>
+        </div>
+    </div>
+    <div class="row m-0">
+      <div class="col-12 p-0 ">
+        <div id="principal-map" class="w-100"></div>
+  
+      </div>
+      <div class="col-12 p-0 ">
+        <div id="principal-panel" class="w-100"></div>
+      </div>
+
+    </div>
+  </main>
+  <!-- lugares-cercanos -->
+  
+  <div id="lugares-cercanos">
+
+  </div>
+  <!-- Modal Actividades-->
+  <div class="modal fade" id="modalActivities" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -82,9 +117,9 @@
           </button>
         </div>
         <div class="modal-body">
-            <div class="row" id="divActivities">
-              
-            </div>
+          <div class="row" id="divActivities">
+
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" id="accept" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -93,30 +128,30 @@
       </div>
     </div>
   </div>
-    <footer>
+  <footer>
 
-        <div class="container">
+    <div class="container">
 
-            <div class="row">
-                <div class="col-xs-12 col-md-12">
-                    <p class="text-center">copyright 2018</p>
-                </div>
-
-            </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-12">
+          <p class="text-center">copyright 2018</p>
         </div>
 
-        </div>
-    </footer>
+      </div>
+    </div>
 
-    <!-- Bootstrap  Jquery JavaScript -->
-    <script src="../vendors/js/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-    <script src="../js/config_firebase.js"></script>
-    <script src="../js/app.js"></script>
-    <script src="../js/main.js"></script>
+    </div>
+  </footer>
+
+  <!-- Bootstrap  Jquery JavaScript -->
+  <script src="../vendors/js/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="../js/config_firebase.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 
 </html>

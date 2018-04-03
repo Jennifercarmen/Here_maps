@@ -175,18 +175,14 @@ main#page {
     background: #1E293B;
   }
   
-  .item-styles{
-    list-style: none;
-  }
   
-  .item-styles:hover{
+ /*  .item-styles:hover{
     background: rgb(29, 36, 46);
     cursor: pointer;
   }
-  
+   */
   .box-input-styles{ 
-    background: rgb(55, 70, 94);
-    border-radius: 5px;
+    background: #37465e;
     /* box-shadow: 10px 10px 24px -6px rgba(0,0,0,0.75); */
     box-shadow: 2px 10px 33px -6px rgba(0,0,0,0.75); 
   }
@@ -203,8 +199,10 @@ main#page {
   }
   
   .icon-search-styles{
-    font-size: 1.2em;
-    padding: 6px 6px 2px 2px;
+    display: inline-block;
+    font-size: 1.3em;
+     margin-top: 5px; 
+     margin-left: 5px;
   }
   
   .icon-color{
@@ -374,5 +372,9 @@ main#page {
 
 #principal-map{
   background:gray;
-  height: 80vh;
+  height: 75vh;
+}
+
+.color-red {
+  
 }
