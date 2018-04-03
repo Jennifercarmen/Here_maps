@@ -393,3 +393,7 @@ main#page {
 .min-height{
   min-height: 400px;
 }
+
+main.main.container {
+  margin: 40px 0px;
+}

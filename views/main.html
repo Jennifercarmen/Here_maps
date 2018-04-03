@@ -5,6 +5,29 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Some Open Graph tags -->
+    <meta name="description" content="Here maps">
+    <meta name="author" content="Here">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Mi ruta" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="https://jennifercarmen.github.io/here_funcionalidad/" />
+    <meta property="og:site_name" content="jennifercarmen.github.io" />
+    <meta property="article:publisher" content="[https://www.facebook.com/Mahcode-849841581779986" />
+    <meta property="article:published_time" content="2018-04-03T07:50:00Z]" />
+    <meta property="og:image" content="https://user-images.githubusercontent.com/32302079/38248755-1c4e47f0-370f-11e8-943e-9e2ce1f8cfe7.png"
+    />
+  
+  
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="@JenniferCarmen" />
+    <meta name="twitter:site" content="@JenniferCarmen" />
+    <meta name="twitter:creator" content="@JenniferCarmen" />
+    <meta name="twitter:via" content="JenniferCarmen" />
+    <meta name="twitter:card" content="photo" />
+    <meta name="twitter:url" content="https://jennifercarmen.github.io/here_funcionalidad/" />
   <title>Plugin</title>
   <!-- HERE MAPS API -->
   <link rel="stylesheet" type="text/css" href="https://js.cit.api.here.com/v3/3.0/mapsjs-ui.css" />
@@ -21,9 +44,12 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto" rel="stylesheet">
   <!-- STYLES -->
   <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/buttoncompartir.css">
+
 </head>
 
 <body>
+  
   <!-- Menu Fijo -->
 
   <nav class="menu navbar navbar-expand-md navbar-dark bg-dark">
@@ -66,7 +92,7 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li> -->
-        <li class="nav-item pr-3 text-center">
+        <li class="nav-item pr-3 text-center" data-toggle="modal" data-target="#compartirMap">
           <a class="nav-link" href="#">Compartir
             <i class="fas fa-share-alt icon-color"></i>
           </a>
@@ -128,6 +154,37 @@
       </div>
     </div>
   </div>
+  <img class="d-none" src="https://user-images.githubusercontent.com/32302079/38248755-1c4e47f0-370f-11e8-943e-9e2ce1f8cfe7.png"> 
+<!-- Modal -->
+<div class="modal fade" id="compartirMap" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Comparte en tus redes sociales</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Buttons, Copy this to your Page Article -->
+        <div class="share-buttons-row">
+          <!--Facebook's Button -->
+          <div class="share-fb"></div>
+          <!--Twitter's Button -->
+          <div class="share-twitter"></div>
+          <!--Facebook's Button -->
+          <div class="share-google-plus"></div>
+          <!--Linkedin's Button -->
+          <div class="share-linkedin"></div>
+        </div>      </div>
+      <div class="modal-footer">
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+
   <footer>
 
     <div class="container">
@@ -138,8 +195,6 @@
         </div>
 
       </div>
-    </div>
-
     </div>
   </footer>
 
@@ -152,6 +207,8 @@
   <script src="../js/config_firebase.js"></script>
   <script src="../js/app.js"></script>
   <script src="../js/main.js"></script>
+  <script src="../js/functionCompartir.js"></script>
+
 </body>
 
 </html>
