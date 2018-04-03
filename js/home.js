@@ -74,6 +74,7 @@ router.calculateRoute(
 function onSuccess(result) {
  console.log('rutas',result)
   var route = result.response.route[0];
+  localStorage.nameruta = result.response.route[0].waypoint[1].label;
  addRouteShapeToMap(route);
  addManueversToMap(route);
 
