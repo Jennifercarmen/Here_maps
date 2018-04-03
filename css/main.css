@@ -376,13 +376,20 @@ main#page {
 }
 
 /* PLACES */
+
+.height-places{
+  height: 80vh;
+}
 #places-container{
-  height: 330px;
-	border: 1px solid #ddd;
+  height: 450px;
 	background:teal;
 	overflow-y: scroll;
 }
 
 .card-styles{
   height: 400px;
+}
+
+.min-height{
+  min-height: 400px;
 }

@@ -1,10 +1,4 @@
-// Instantiate the Platform class with authentication and
-// authorization credentials:
- // set up containers for the map  + panel
- var mapContainer = document.getElementById('principal-map'),
-   routeInstructionsContainer = document.getElementById('principal-panel');
- 
- //Step 1: initialize communication with the platform
+//Step 1: initialize communication with the platform
  var platform = new H.service.Platform({
    app_id: 'GYY2pVG6gWaZZB2kVTLw',
    app_code: '6n-eV00Iq-KV_lVCWBdSdw',
@@ -12,28 +6,11 @@
    useHTTPS: true
  });
  var defaultLayers = platform.createDefaultLayers();
- //Step 2: initialize a map - this map is centered over Berlin
- /* var map = new H.Map(mapContainer,
-   defaultLayers.normal.map,{
-   center: {lat:-12.085474, lng:-76.977291},
-   zoom: 12
- }); */
- 
- 
-
-
-
-/* ---------------------------------------------------- */
-/* var platform = new H.service.Platform({
-    useCIT: true,
-    app_id: 'GYY2pVG6gWaZZB2kVTLw',
-    app_code: '6n-eV00Iq-KV_lVCWBdSdw'
-    }); */
     // Instantiate a map inside the DOM element with id map. The
     // map center is in San Francisco, the zoom level is 10:
     var map = new H.Map(document.getElementById('map'),
     platform.createDefaultLayers().normal.map, {
-    center: {lat: -12.0742688, lng: -76.9393747},
+    center: {lat: localStorage.latitudeMainA, lng: localStorage.longitudeMainA},
     zoom: 12
     });
 
@@ -64,15 +41,10 @@ function parameters(string){
         var params = {
         // Plain text search for places with the word "hotel"
         // associated with them:
-        'q': string,
-        //'q':'restaurant',
-        //'q':'coffee',
-    
+        'q': string,   
         // Search in the Chinatown district in San Francisco:
-        'at': '-12.0742688,-76.9393747'
-        };
-        
-       
+        'at':`${localStorage.latitudeMainA},${localStorage.longitudeMainA}`
+        };      
         return params;
 }
  // Define a callback function to handle data on success:
@@ -92,11 +64,7 @@ function parameters(string){
         <br>
       </div>`
       $('#places-container').append(template)
-        console.log('nombre restaurant',place.title);
-        console.log('direccion',place.vicinity);
-        console.log('distancia',place.distance);
-    })
-    console.log( 'onResult', data.results.items)
+    });
 addPlacesToMap(data.results);
 }
 
@@ -105,14 +73,11 @@ function onError(data) {
 error = data;
 }
     
-
-    
-    // This function adds markers to the map, indicating each of
-    // the located places:
+// This function adds markers to the map, indicating each of
+// the located places:
     function addPlacesToMap(result) {
 
     group.addObjects(result.items.map(function (place) {
-        console.log(place.icon)
         var iconUrl = place.icon;
         var iconOptions = {
         // The icon's size in pixel:
@@ -139,16 +104,18 @@ error = data;
 
     /* agragando evento click  */
 
-    var placesButton = $('.show-places-js');
-   /*  var showRestaurants = $('.show-restaurants-js');
-    var showCoffee = $('.show-coffee-js');
-    var showHotels = $('.show-hotels-js'); */
+    /* var placesButton = $('.show-places-js');
      placesButton.on('click',function(){
-        console.log('click!!')
         search.request(parameters('hotel'), {}, onResult, onError);
         search.request(parameters('coffee'), {}, onResult, onError);
         search.request(parameters('restaurant'), {}, onResult, onError);
-    }); 
+    });  */
+
+    window.addEventListener('load',(function(){
+        search.request(parameters('hotel'), {}, onResult, onError);
+        search.request(parameters('coffee'), {}, onResult, onError);
+        search.request(parameters('restaurant'), {}, onResult, onError);
+    }));
 
     
     
