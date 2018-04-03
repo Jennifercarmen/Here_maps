@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plugin</title>
+  <link rel="shortcut icon" href="../assets/images/favicon.png">
+  <!-- HERE MAPS API -->
+  <link rel="stylesheet" type="text/css" href="https://js.cit.api.here.com/v3/3.0/mapsjs-ui.css" />
+  <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-core.js"></script>
+  <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-service.js"></script>
+  <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+  <script type="text/javascript" src="https://js.cit.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+  <!-- BOOTSTRAP - GOOGLE FONTS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+
+</head>
+<body>
+  
+  <!-- Menu Fijo -->
+  <div class="container-fluid p-0 m-0">
+    <nav class="menu navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <img class="img-brand" src="../assets/images/here_white.png" alt="Here maps">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link text-white" href="index.html">INICIO
+            </a>
+          </li>
+
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+          <a class=" btn btn-navbar  my-2 my-sm-0" role="button" aria-pressed="false" href="views/login.html">Entrar</a>
+        </form>
+      </div>
+    </nav>
+  </div>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="text-center">Mis rutas</h4>
+      </div>
+
+    </div>
+  </div>
+
+  </section>
+  <section class="p-3">
+    <div class="container">
+      <div class="row" id="routes">
+
+      </div>
+    </div>
+  </section>
+  <div>
+  <button class="btn btn-info arrive-js ml-1">Instrucciones</button>
+</div>
+  <section>
+      <section class=" m-0 p-0 w-100">
+          <div class="">
+            <div class="row m-0 box_mapa p-0">
+              <div class="col-12 w-100 p-0" id="map"></div>       
+            </div>
+            <div class="row m-0 p-3 box_mapa">
+              <div class="col-12 w-100" id="panel"></div>
+            </div>
+          </div>
+  </section>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-md-12">
+            <p class="text-center">copyright 2018</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </footer>
+    <!-- Bootstrap  Jquery JavaScript -->
+    <!-- Bootstrap  Jquery JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="../js/config_firebase.js"></script>
+   <script src="../js/misrutas.js"></script>
+   <script src="../js/marcarRuta.js"></script>
+</body>
+
+</html>
