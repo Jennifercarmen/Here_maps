@@ -1,59 +1,73 @@
 //Calculating the current location:
 
 function begin () {
-  var miBoton = document.getElementById('mi-ubicacion');
- 
+
   if(navigator.geolocation) {
    navigator.geolocation.getCurrentPosition(showPosition);
-  }
-}
-
-function showPosition(posicion) {
-  var ubicacion = document.getElementById('ubicacion');
-  var myPosition = {
-    lat: posicion.coords.latitude,
-    lng: posicion.coords.longitude
-  }
-  var latitude=  myPosition.lat;
-  localStorage.myLatitude = JSON.stringify(latitude);
-  var longitude =  myPosition.lng;
-  localStorage.myLongitude= JSON.stringify(longitude);
-  console.log(latitude,longitude)
-  //ubicacion.innerHTML= latitude + '<br>'+ longitude
-}
-
-window.addEventListener('load', begin,false)
-
-console.log('v o f', localStorage.myLongitude==='-76.9361273');
-
-function calculateRouteFromAtoB (platform) {
-  //geocode(platform);
- var prueba3 = localStorage.myLongitude;
- //console.log(prueba3.toString());
-var prueba1 = '-12.0628815';
-//var prueba2= '-76.9361958'
- var prueba2= localStorage.myLatitude;
- console.log(typeof(localStorage.myLatitude))
- var router = platform.getRoutingService(),
-   routeRequestParams = {
-     mode: 'shortest;pedestrian',
-     representation: 'display',
-     waypoint0:  prueba2+','+prueba3,// Route A
-    // waypoint0:'-12.0628815,-76.9361958',
-   //waypoint1: localStorage.latitudeB+','+localStorage.longitudeB,  // Route B 
-   waypoint1: localStorage.latitudeB+','+localStorage.longitudeB,
-     routeattributes: 'waypoints,summary,shape,legs',
-     maneuverattributes: 'direction,action',
-     language:'es-es'
-   };
-   console.log('1',routeRequestParams.waypoint1);
-
-  router.calculateRoute(
-   routeRequestParams,
-   onSuccess,
-   onError
+   function showPosition(posicion) {
+    var myPosition = {
+      lat: posicion.coords.latitude,
+      lng: posicion.coords.longitude
+    }
+    var myLatitude=  myPosition.lat;
+    var myLongitude =  myPosition.lng;
+    console.log(myLatitude,myLongitude)
   
- ); 
+    var input = $('.principal-input-js').val();
+
+
+   var searchButton = $('.search-button-js');
+  
+   searchButton.on('click',function(){
+   console.log('click',localStorage.routeB);
+ //  geocode(platform);
+   calculateRouteFromAtoB (platform); 
+   });
+
+   /*boton mostrar instrucciones*/
+  
+   var arriveButton = $('.arrive-js');
+
+/* ----------------------- */
+function calculateRouteFromAtoB (platform) {
+  function geocode(platform) {
+
+    var geocoder = platform.getGeocodingService(),
+      geocodingParameters = {
+        searchText: $('.principal-input-js').val(),
+        jsonattributes : 1,
+      }
+    geocoder.geocode(geocodingParameters,onSuccess1,onError1);
+    //calculateRouteFromAtoB (platform); 
+  }
+  function onSuccess1(result) {
+    console.log('esta aquiiii')
+    var locations = result.response.view[0].result;
+    console.log('routeB', locations);
+    var latitudeB= locations[0].location.displayPosition.latitude;
+    var longitudeB =  locations[0].location.displayPosition.longitude;
+    
+ var router = platform.getRoutingService(),
+ routeRequestParams = {
+   mode: 'shortest;pedestrian',
+   representation: 'display',
+   waypoint0:  myLatitude+','+myLongitude,// Route A
+   waypoint1:latitudeB+','+longitudeB,   // Route B 
+   routeattributes: 'waypoints,summary,shape,legs',
+   maneuverattributes: 'direction,action',
+   language:'es-es'
+ };
+ console.log('1',routeRequestParams.waypoint1);
+
+router.calculateRoute(
+ routeRequestParams,
+ onSuccess,
+ onError
+
+); 
+ 
+  }
+  geocode(platform);
 
 }
 
@@ -62,15 +76,14 @@ function onSuccess(result) {
   var route = result.response.route[0];
  addRouteShapeToMap(route);
  addManueversToMap(route);
- //addWaypointsToPanel(route.waypoint);
- //addManueversToPanel(route);
- //addSummaryToPanel(route.summary); 
- // ... etc.
+
+
  arriveButton.on('click',function(){
    addWaypointsToPanel(route.waypoint);
    addManueversToPanel(route);
    addSummaryToPanel(route.summary); 
  })
+
 }
 
 function onError(error) {
@@ -92,7 +105,7 @@ var defaultLayers = platform.createDefaultLayers();
 //Step 2: initialize a map - this map is centered over Berlin
 var map = new H.Map(mapContainer,
  defaultLayers.normal.map,{
- center: {lat:-12.085474, lng:-76.977291},
+ center: {lat:myLatitude, lng:myLongitude},
  zoom: 12
 });
 
@@ -188,7 +201,7 @@ function addWaypointsToPanel(waypoints){
    waypointLabels.push(waypoints[i].label)
   }
 
-  nodeH3.textContent = waypointLabels.join(' ');
+  nodeH3.textContent = waypointLabels.join(' - ');
 
  routeInstructionsContainer.innerHTML = '';
  routeInstructionsContainer.appendChild(nodeH3);
@@ -240,58 +253,16 @@ function addManueversToPanel(route){
   Number.prototype.toMMSS = function () {
     return  Math.floor(this / 60)  +' minutos '+ (this % 60)  + ' segundos.';
   }  
-  // Now use the map as required...
-  //calculateRouteFromAtoB (platform); 
-
-
 
   /* --------------------------------------------------------------------------------------------- */
 
 
- var input = $('.principal-input-js');
- console.log(input)
- input.on('input',function(){
-   console.log(this.value);
-   var result = this.value;
-   localStorage.routeB= result
- });
-
- var searchButton = $('.search-button-js');
-
- searchButton.on('click',function(){
- console.log('click',localStorage.routeB);
- //debugger 
- geocode(platform);
- //calculateRouteFromAtoB (platform); 
- });
-
- function geocode(platform) {
-
-   var geocoder = platform.getGeocodingService(),
-     geocodingParameters = {
-       searchText: localStorage.routeB,
-      //searchText:input.value,
-       jsonattributes : 1,
-     }
-   geocoder.geocode(geocodingParameters,onSuccess1,onError1);
-   //calculateRouteFromAtoB (platform); 
- }
-
  function onSuccess1(result) {
    console.log('esta aquiiii')
    var locations = result.response.view[0].result;
-   console.log('routeB', locations);
    var latitudeB= locations[0].location.displayPosition.latitude;
-   localStorage.latitudeB= latitudeB;
    var longitudeB =  locations[0].location.displayPosition.longitude;
-   localStorage.longitudeB= longitudeB;
 
-   //calculateRouteFromAtoB (platform); 
-  // console.log(latitudeB,longitudeB)
-
-  // addLocationsToMap(locations);
-   //addLocationsToPanel(locations);
-   // ... etc.
  }
 
  function onError1(error) {
@@ -299,16 +270,10 @@ function addManueversToPanel(route){
    alert('Ooops!');
  }
  
- //geocode(platform);
+  }
 
-/*boton mostrar instrucciones*/
+  }
+}
 
- var arriveButton = $('.arrive-js');
+window.addEventListener('load', begin)
 
-
-
- 
- 
-
- 
- 
